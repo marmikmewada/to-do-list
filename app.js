@@ -37,7 +37,14 @@ newItemButton.addEventListener("click", function(){
             tempItemList.forEach((value, index)=>{
                 tempItemList.splice(index,tempItemList.length);
             });
-            
+            // console.log(tempListArea.children);
+            const arrayOfTempListLi = tempListArea.children;
+            // console.log(arrayOfTempListLi);
+            arrayOfTempListLi.forEach((value,index)=>{
+                arrayOfTempListLi.splice(index,1);
+            });
+            console.log(arrayOfTempListLi);
+            console.log(tempListArea.children);
         })
         // console.log(finalItemList);
         // console.log(tempItemList);
