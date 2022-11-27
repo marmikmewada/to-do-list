@@ -26,10 +26,7 @@ newItemButton.addEventListener("click", function(){
                 e.stopImmediatePropagation();
                 console.log(index);
                 tempItemList.splice(index,1);
-                // console.log(tempItemList);
-                // console.log(tempListArea);
                 tempListArea.removeChild(tempListArea.children[index]);
-                // li.tempListArea.removeChild(tempListArea.children[index]);
             });
         });
         sendFinalButton.addEventListener("click", function(){
@@ -37,17 +34,13 @@ newItemButton.addEventListener("click", function(){
             tempItemList.forEach((value, index)=>{
                 tempItemList.splice(index,tempItemList.length);
             });
-            // console.log(tempListArea.children);
-            const arrayOfTempListLi = tempListArea.children;
-            // console.log(arrayOfTempListLi);
-            arrayOfTempListLi.forEach((value,index)=>{
-                arrayOfTempListLi.splice(index,1);
-            });
-            console.log(arrayOfTempListLi);
-            console.log(tempListArea.children);
-        })
-        // console.log(finalItemList);
-        // console.log(tempItemList);
+            let arrayOfTempListLi = tempListArea.children;
+            
+            
+
+            
+        });
+           
         
     });
 
@@ -64,7 +57,18 @@ newItemButton.addEventListener("click", function(){
 
 
 
-
+ // console.log(tempListArea.children);
+//  const arrayOfTempListLi = tempListArea.children;
+//  // console.log(arrayOfTempListLi);
+//  arrayOfTempListLi.forEach((value,index)=>{
+//      arrayOfTempListLi.splice(index,1);
+     
+//  });
+//  console.log(arrayOfTempListLi);
+//  console.log(tempListArea.children);
+// })
+// console.log(finalItemList);
+// console.log(tempItemList);
 
 
 
