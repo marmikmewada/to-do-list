@@ -24,23 +24,41 @@ newItemButton.addEventListener("click", function(){
         newi.forEach((value,index)=>{
             newi[index].addEventListener("click", function(e){
                 e.stopImmediatePropagation();
-                console.log(index);
+                // console.log(index);
                 tempItemList.splice(index,1);
                 tempListArea.removeChild(tempListArea.children[index]);
             });
+            itemInput.focus();
         });
         sendFinalButton.addEventListener("click", function(){
-            finalItemList = [...tempItemList];
+            finalItemList.push(...tempItemList);
             tempItemList.forEach((value, index)=>{
                 tempItemList.splice(index,tempItemList.length);
             });
-            let arrayOfTempListLi = tempListArea.children;
-            
-            
-
-            
+            // let arrayOfTempListLi = tempListArea.children;
+            li.parentNode.removeChild(li);
+            const finalListArea = document.querySelector(".final-list-area");
+            // console.log(finalItemList);
+            finalItemList.forEach((value,index)=>{
+                finalListArea.appendChild(li);
+                // li.innerHTML=`<span>${finalItemList[index]}</span>`;
+                // console.log(finalItemList[index]);
+            })
+            const liOfFinalList = document.querySelectorAll(".final-list-area>li");
+            liOfFinalList.forEach((value,index)=>{
+                liOfFinalList[index].innerHTML=`<span>${finalItemList[index]}</span>`;
+            });
         });
-           
+
+        orderButton.addEventListener("click", function(){
+            localStorage.setItem("finalItemList", JSON.stringify(finalItemList));
+            let storedItems = JSON.parse(localStorage.finalItemList);
+            // console.log(storedItems);
+            finalItemList.forEach((value,index)=>{
+                finalItemList.splice(index,finalItemList.length);
+            })
+            li.parentNode.removeChild(li);
+        });
         
     });
 

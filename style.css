@@ -175,8 +175,8 @@
     }
     body{
         display: grid;
-        grid-template-columns: 1fr 5fr 1fr;
-        grid-template-rows: 1fr 5fr 1fr;
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template-rows: 1fr 11fr 1fr;
     }
         .wrapper{
             grid-row: 2/3;
